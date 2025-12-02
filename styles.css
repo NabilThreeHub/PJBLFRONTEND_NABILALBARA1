@@ -1,0 +1,363 @@
+/* ================================
+   BASE & GLOBAL
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+}
+
+body {
+  background: #f6f8fb;
+  color: #222;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* ================================
+   NAVBAR — MODERN GLASS
+================================ */
+.navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(10, 92, 168, 0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-title {
+  color: #fff;
+  font-weight: 600;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.nav-link:hover {
+  background: #fff;
+  color: #0a5ca8;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+  background: url("assets/bg-lombok.jpg") center/cover no-repeat;
+  padding: 120px 20px;
+  color: white;
+  border-radius: 16px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+/* ================================
+   GRID & CARD — GLASS MODERN
+================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: #0f4c81;
+  font-size: 16px;
+}
+
+.card p {
+  color: #555;
+  font-size: 13px;
+  flex-grow: 1;
+}
+
+.card .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ================================
+   BUTTON
+================================ */
+.btn {
+  background: linear-gradient(135deg, #0a5ca8, #0d75c3);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #0a5ca8;
+  border: 1px solid #c7d9ea;
+}
+
+/* ================================
+   INPUT, TEXTAREA, SELECT
+================================ */
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+/* ================================
+   MODAL — GLASS MODERN
+================================ */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  z-index: 60;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(12px);
+  padding: 22px;
+  border-radius: 20px;
+  width: 94%;
+  max-width: 760px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transform: scale(0.9);
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.modal:not(.hidden) .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-content.small {
+  max-width: 420px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ================================
+   FAVORITE POPUP
+================================ */
+.popup-list {
+  max-height: 320px;
+  overflow: auto;
+  margin-top: 12px;
+}
+
+.fav-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: #f9fbff;
+  margin-bottom: 8px;
+}
+
+.fav-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.fav-item h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #0f4c81;
+}
+
+.fav-item button {
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.fav-item button:hover {
+  background: #c5303c;
+}
+
+/* ================================
+   LOADER
+================================ */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ================================
+   TABLE
+================================ */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table th {
+  background: #0a5ca8;
+  color: white;
+  padding: 10px;
+}
+
+.table td {
+  background: white;
+  padding: 8px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.table tr:hover td {
+  background: #eef6ff;
+}
+
+/* ================================
+   UTILITIES
+================================ */
+.hidden { display: none; }
+.muted { color: #777; font-size: 13px; }
+
+@media (max-width: 640px) {
+  .card img {
+    height: 140px;
+  }
+}
+/* ===== HERO SECTION (DESAIN BARU) ===== */
+.hero {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2f80ed, #56ccf2);
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 0 0 20px 20px;
+}
+
+/* Judul besar */
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+/* Subtitle */
+.hero p {
+    font-size: 1.25rem;
+    color: #e9f3ff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    max-width: 700px;
+}

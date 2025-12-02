@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Admin - Pariwisata</title><link rel="stylesheet" href="styles.css"/></head>
+<body>
+  <header class="navbar"><div class="navbar-container"><div class="navbar-title">Dashboard Admin</div><div><button class="nav-link" onclick="location.href='index.html'">Lihat Situs</button></div></div></header>
+  <main class="container">
+    <section>
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button id="btn-add" class="btn">Tambah</button>
+        <button id="btn-logout" class="nav-link">Logout</button>
+      </div>
+
+      <div id="form-card" class="card hidden">
+        <h4 id="form-title">Tambah / Edit Wisata</h4>
+        <input id="f-name" placeholder="Nama wisata"/>
+        <input id="f-location" placeholder="Lokasi lengkap"/>
+        <select id="f-category"><option>Pantai</option><option>Gunung</option><option>Air Terjun</option><option>Budaya</option><option>Sejarah</option></select>
+        <input id="f-image" placeholder="Path gambar (assets/...)"/>
+        <textarea id="f-desc" rows="4" placeholder="Deskripsi"></textarea>
+        <div style="display:flex;gap:8px;margin-top:8px"><button id="f-save" class="btn">Simpan</button><button id="f-cancel" class="btn secondary">Batal</button></div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h4>Daftar Wisata</h4>
+        <table id="table" class="table" style="width:100%">
+          <thead><tr><th>Gambar</th><th>Nama</th><th>Lokasi</th><th>Kategori</th><th>Aksi</th></tr></thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

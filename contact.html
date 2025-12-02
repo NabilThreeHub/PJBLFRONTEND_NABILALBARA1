@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Kontak</title><link rel="stylesheet" href="styles.css"/></head><body>
+<header class="navbar"><div class="navbar-container"><div class="navbar-title">Info Pariwisata Lombok</div><div><button class="nav-link" onclick="location.href='index.html'">Home</button></div></div></header>
+<main class="container"><h2>Kontak & Saran</h2>
+  <div class="card">
+    <p>Isi saran melalui form di bawah — data disimpan sementara di sessionStorage.</p>
+    <input id="c-name" placeholder="Nama"/><input id="c-email" placeholder="Email"/><textarea id="c-msg" rows="4" placeholder="Pesan"></textarea>
+    <div style="margin-top:8px"><button id="c-send" class="btn">Kirim</button></div>
+  </div>
+  <script>
+    document.getElementById('c-send').onclick = ()=>{
+      const n=document.getElementById('c-name').value, e=document.getElementById('c-email').value, m=document.getElementById('c-msg').value;
+      if(!n||!e||!m) return alert('Lengkapi form');
+      sessionStorage.setItem('contact',JSON.stringify({name:n,email:e,msg:m}));
+      alert('Terima kasih, pesan terkirim.');
+      document.getElementById('c-name').value='';document.getElementById('c-email').value='';document.getElementById('c-msg').value='';
+    }
+  </script>
+</main>
+</body></html>

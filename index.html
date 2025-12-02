@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Info Pariwisata Lombok</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-title">Info Pariwisata Lombok</div>
+
+      <nav class="navbar-menu">
+        <button class="nav-link" onclick="location.href='profile.html'">Profil</button>
+        <button class="nav-link" id="nav-info" onclick="location.href='info.html'">Info Wisata</button>
+        <button class="nav-link" id="nav-login">Login</button>
+        <button class="nav-link" onclick="location.href='contact.html'">Kontak</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Jelajahi Keindahan Lombok</h1>
+    <p>Temukan pantai, gunung, budaya, dan wisata terbaik.</p>
+</section>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <section>
+      <div class="search-bar">
+        <input id="search-input" type="text" placeholder="Cari nama wisata..." />
+
+        <select id="category-select">
+          <option value="Semua">Semua</option>
+          <option value="Pantai">Pantai</option>
+          <option value="Gunung">Gunung</option>
+          <option value="Budaya">Budaya</option>
+          <option value="Air Terjun">Air Terjun</option>
+        </select>
+      </div>
+
+      <div id="cards-container" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <!-- MODAL DETAIL -->
+  <div id="detail-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="detail-close">&times;</button>
+
+      <img id="detail-img" src="" class="detail-image" />
+
+      <h3 id="detail-name"></h3>
+      <p id="detail-location" class="muted"></p>
+      <p id="detail-desc"></p>
+    </div>
+  </div>
+
+  <!-- MODAL LOGIN -->
+  <div id="login-modal" class="modal hidden">
+    <div class="modal-content small">
+      <button class="modal-close" id="login-close">&times;</button>
+
+      <h3>Login</h3>
+
+      <input id="login-name" type="text" placeholder="Nama (tamu) atau admin" />
+      <input id="login-pass" type="password" placeholder="Password (kosongkan untuk tamu)" />
+
+      <button id="login-submit" class="btn" style="margin-top:10px">Masuk</button>
+    </div>
+  </div>
+
+  <!-- POPUP FAVORITE -->
+  <div id="favorite-popup" class="modal hidden">
+    <div class="modal-content small">
+      <button class="modal-close" id="favorite-close">&times;</button>
+
+      <h3>Favorite Anda</h3>
+      <div id="favorite-popup-list" class="popup-list"></div>
+    </div>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader hidden"></div>
+
+  <!-- JAVASCRIPT -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
